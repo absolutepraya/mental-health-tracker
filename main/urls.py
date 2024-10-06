@@ -10,7 +10,8 @@ from main.views import (
     login_user,
     logout_user,
     edit_mood,
-    delete_mood
+    delete_mood,
+    add_mood_entry_ajax
 )
 
 app_name = "main"
@@ -22,9 +23,10 @@ urlpatterns = [
     path("json/", show_json, name="show_json"),
     path("xml/<str:id>/", show_xml_by_id, name="show_xml_by_id"),
     path("json/<str:id>/", show_json_by_id, name="show_json_by_id"),
-    path('register/', register, name='register'),
-    path('login/', login_user, name='login'),
-    path('logout/', logout_user, name='logout'),
-    path('edit-mood/<uuid:id>', edit_mood, name='edit_mood'),
-    path('delete/<uuid:id>', delete_mood, name='delete_mood')
+    path("register/", register, name="register"),
+    path("login/", login_user, name="login"),
+    path("logout/", logout_user, name="logout"),
+    path("edit-mood/<uuid:id>", edit_mood, name="edit_mood"),
+    path("delete/<uuid:id>", delete_mood, name="delete_mood"),
+    path("create-mood-entry-ajax", add_mood_entry_ajax, name="add_mood_entry_ajax"),
 ]
